@@ -1,5 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 body{
     text-align: center;
+    justify-content: center;
+    display: flex;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 form{
@@ -22,4 +29,10 @@ li{
 }
 .botoes button{
     margin: 0 15px 20px;
+}
+#principal{
+    width: 800px;
+    height: 500px;
+    background-color: gray;
+    border-radius: 10px;
 }

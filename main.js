@@ -10,7 +10,7 @@ class GerenciadorContatos {
     constructor() {
         this.contatos = []
     }
-    adicionarContato(contatos) {
+    adicionarContato(contato) {
         this.contatos.push(contato);
     }
 
@@ -26,14 +26,36 @@ class GerenciadorContatos {
         }
     }
 }
-const gerenciadorContatos = new gerenciadorContatos('contato-form');
-const nome = document.getElementById('nome')
-const email = document.getElementById('email')
-const telefone = document.getElementById('telefone')
-const mostrarContatos = document.getElementById('mostrar-contatos')
-const ocultarContatos = document.getElementById('ocultar-contatos')
-const listaContatos = document.getElementById('contato-lista')
+const gerenciadorContatos = new GerenciadorContatos();
+const contatoForm = document.getElementById('contato-form');
+const nomeF = document.getElementById('nome');
+const emailF = document.getElementById('email');
+const telefoneF = document.getElementById('telefone');
+const mostrarContatos = document.getElementById('mostrar-contatos');
+const ocultarContatos = document.getElementById('ocultar-contatos');
+const listaContatos = document.getElementById('contato-lista');
 
 contatoForm.addEventListener('submit', (event) => {
-    
+    event.preventDefault();
+
+    const nome = nomeF.value
+    const email = emailF.value
+    const telefone = telefoneF.value
+
+    const contato = new Contatos(nome, email, telefone);
+
+    gerenciadorContatos.adicionarContato(contato);
+
+    nomeF.value = ''
+    emailF.value = ''
+    telefoneF.value = ''
+})
+
+mostrarContatos.addEventListener('click', () => {
+    gerenciadorContatos.exibirContatos();
+    listaContatos.style.display = 'block';
+})
+
+ocultarContatos.addEventListener('click', ()=>{
+    listaContatos.style.display = 'none'
 })

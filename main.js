@@ -1,5 +1,5 @@
 class Contatos {
-    constructor(nome, email, telefone){
+    constructor(nome, email, telefone) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
@@ -7,21 +7,22 @@ class Contatos {
 }
 
 class GerenciadorContatos {
-    constructor(){
+    constructor() {
         this.contatos = []
     }
-    adicionarContato(contatos){
+    adicionarContato(contatos) {
         this.contatos.push(contato);
     }
-}
-exibirContatos() {
-    const listaContatos = document.getElementById('contato-lista');
 
-    listaContatos.innerHTML = '';
+    exibirContatos() {
+        const listaContatos = document.getElementById('contato-lista');
 
-    for(const contato of this.contatos){
-        const li = document.createElement('li');
-        li.innerHTML = `${contato.nome} - ${contato.email} - ${contato.telefone}`;
-        listaContatos.appendChild(li)
+        listaContatos.innerHTML = '';
+
+        for (const contato of this.contatos) {
+            const li = document.createElement('li');
+            li.innerHTML = `${contato.nome} - ${contato.email} - ${contato.telefone}`;
+            listaContatos.appendChild(li)
+        }
     }
 }

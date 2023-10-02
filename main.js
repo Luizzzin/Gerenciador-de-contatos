@@ -26,3 +26,14 @@ class GerenciadorContatos {
         }
     }
 }
+const gerenciadorContatos = new gerenciadorContatos('contato-form');
+const nome = document.getElementById('nome')
+const email = document.getElementById('email')
+const telefone = document.getElementById('telefone')
+const mostrarContatos = document.getElementById('mostrar-contatos')
+const ocultarContatos = document.getElementById('ocultar-contatos')
+const listaContatos = document.getElementById('contato-lista')
+
+contatoForm.addEventListener('submit', (event) => {
+    
+})
